@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html, body, #root { height: 100%; }
+body { @apply bg-surface-secondary text-ink font-sans antialiased; font-feature-settings: 'cv11', 'ss01'; }
+*:focus-visible { outline: 2px solid #D7C18A; outline-offset: 2px; border-radius: 6px; }
+
+@layer components {
+  .input { @apply w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-ink-soft/70 focus:border-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-secondary/15; }
+  .label { @apply mb-1 block text-xs font-medium text-ink-soft; }
+  .th { @apply whitespace-nowrap px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-ink-soft; }
+  .td { @apply whitespace-nowrap px-3 py-2.5 text-[13px]; }
+  .prose-pac p { @apply mb-3 leading-relaxed text-ink/85; }
+  .scroll-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scroll-thin::-webkit-scrollbar-thumb { background: #cfcabb; border-radius: 9px; }
+}
+
+@keyframes pulse-ring { 0% { transform: scale(.6); opacity: .7 } 100% { transform: scale(2.2); opacity: 0 } }
+.pulse-ring { animation: pulse-ring 1.8s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes slide-up { from { transform: translateY(8px); opacity: 0 } to { transform: none; opacity: 1 } }
+.slide-up { animation: slide-up .25s ease-out; }
